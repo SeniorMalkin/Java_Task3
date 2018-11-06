@@ -90,9 +90,108 @@ public class Main {
         }
         System.out.println(Arrays.toString(arr));
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //4(d)
+        System.out.println("  ");
+        System.out.println("4(d)");
+        SIZE = 15;
+        int max = 0,min =200,imax =0,imin =0;
+        arr = new int[SIZE];
+        for(int i=0;i< SIZE;i++){
+            arr[i] = -50 + rand.nextInt(101);
+            if(arr[i] >= max){
+                max = arr[i];
+                imax = i;
+            }
+            if(arr[i] <= min){
+                min = arr[i];
+                imin = i;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Max element:" + max +"  Index max:" + imax);
+        System.out.println("Min element:" + min +"  Index min:" + imin);
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //4(e)
+        System.out.println("  ");
+        System.out.println("4(e)");
+        SIZE = 10;
+        int sum =0 ,sum1 = 0,average = 0,average1 = 0;
+        arr = new int[SIZE];
+        int[] arr1 = new int[SIZE];
+        for(int i=0;i< SIZE;i++) {
+            arr[i] = rand.nextInt(11);
+            arr1[i] = rand.nextInt(11);
+            sum+=arr[i];
+            sum1+=arr1[i];
+        }
+        average = sum / arr.length;
+        average1 = sum1 / arr1.length;
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr1));
+
+        if(average > average1){
+            System.out.println("Average first array is more");
+        }
+        else{
+            if(average1 > average){
+                System.out.println("Average second array is more");
+            }
+            else{
+                System.out.println("Average both array are equal");
+            }
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //4(f)
+        System.out.println("  ");
+        System.out.println("4(f)");
+        SIZE = 20;
+        arr = new int[SIZE];
+        arr1 = new int[3];
+
+        for(int i=0;i< SIZE;i++) {
+            arr[i] = -1 + rand.nextInt(3);
+            switch(arr[i]){
+                case -1:
+                    arr1[0]++;
+                    break;
+                case 0:
+                    arr1[1]++;
+                    break;
+                case 1:
+                    arr1[2]++;
+                    break;
+            }
+        }
+
+        System.out.println(Arrays.toString(arr));
+
+        max = 0;
+        imax = 0;
+        for(int i=0;i<3;i++)
+        {
+            if(arr1[i] > max){
+                max = arr1[i];
+                imax = i;
+            }
+        }
+        System.out.println("The most frequent element:" + (imax-1));
+
+        if (arr1[0] == arr1[1]) {
+            System.out.println(-1 + " and " + 0 + " have the same frequency");
+        }
+        if (arr1[2] == arr1[1]) {
+            System.out.println(1 + " and " + 0 + " have the same frequency");
+        }
+        if(arr1[0] == arr1[2]){
+            System.out.println(-1 + " and " + 1 + " have the same frequency");
+        }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //TWO-DIMENSIONAL ARRAY
         //5(a)
         System.out.println("  ");
+        System.out.println("5(a)");
         int ROW = 5;
         int COLUMN = 5;
         int i;
@@ -104,7 +203,7 @@ public class Main {
             }
         }
         i=0;j=0;
-        int sum =0;
+        sum =0;
         long comp =1;
         while ((i<ROW) && (j<COLUMN)) {
             sum = sum + arr2[i][j] + arr2[i][(COLUMN-1)-i];
@@ -120,12 +219,13 @@ public class Main {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //5(b)
         System.out.println("  ");
+        System.out.println("5(b)");
         ROW = 8;
         COLUMN = 5;
         i = 0;
         j = 0;
-        int max = 0;
-        int imax = 0;
+        max = 0;
+        imax = 0;
         int jmax = 0;
         arr2 = new int[ROW][COLUMN];
         for(i=0;i< ROW;i++){
@@ -147,6 +247,7 @@ public class Main {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //5(c)
         System.out.println("  ");
+        System.out.println("5(c)");
         ROW = 8;
         COLUMN = 5;
         i = 0;
@@ -174,6 +275,7 @@ public class Main {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //5(d)
         System.out.println("  ");
+        System.out.println("5(d)");
         ROW = 10;
         COLUMN = 7;
         arr2 = new int[ROW][COLUMN];
@@ -205,6 +307,8 @@ public class Main {
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //6.ENUM
+        System.out.println("  ");
+        System.out.println("6");
         Select mune = Select.C;
 
         long startTime = System.nanoTime();
